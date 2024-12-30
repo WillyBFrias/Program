@@ -58,18 +58,18 @@ class Program
                     {
                         Console.WriteLine("Héroes Marvel:");
 
-                        // Mostrar los héroes seleccionados en la página actual
+                        // Enumerar y mostrar los héroes seleccionados en la página actual
                         foreach (var hero in marvelResponse.Data.Results)
                         {
+                            heroesMostrados++;
                             string description = string.IsNullOrEmpty(hero.Description)
                                 ? "Descripción no disponible"
                                 : hero.Description;
 
-                            Console.WriteLine($"Nombre: {hero.Name}");
-                            Console.WriteLine($"Descripción: {description}");
+                            Console.WriteLine($"[{heroesMostrados}] Nombre: {hero.Name}");
+                            Console.WriteLine($"    Descripción: {description}");
                             Console.WriteLine();
 
-                            heroesMostrados++;
                             if (heroesMostrados >= cantidadHeroes)
                             {
                                 break;
